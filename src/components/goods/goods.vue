@@ -2,7 +2,7 @@
 <div class="goods">
   <div class="menu-wrapper" ref="menu-wrapper">
     <ul>
-      <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}"
+      <li v-for="(item,index) in goods"   :key='item.name' class="menu-item" :class="{'current':currentIndex===index}"
        @click="selectMenu(index,$event)">
         <span class="text border-1px">
          <span v-show="item.type > 0" class="icon" :class="classMap[item.type]">
@@ -15,10 +15,10 @@
   </div>
   <div class="foods-wrapper" ref="foods-wraper">
     <ul>
-      <li v-for="item in goods" class="foo-list food-list-hook">
+      <li v-for="(item) in goods" :key='item.name' class="foo-list food-list-hook">
         <h1 class="title">{{item.name}}</h1>
         <ul>
-          <li v-for="food in item.foods" class="food-item border-1px">
+          <li v-for="(food) in item.foods" :key='food.foods' class="food-item border-1px">
             <div class="icon">
                 <img width="57" height="57" :src="food.icon" alt="">
             </div>
@@ -84,7 +84,7 @@ export default {
            this._initScroll();
            this._calculatHeight();
         });
-      };
+      }
     });
   },
   methods: {

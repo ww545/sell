@@ -1,13 +1,13 @@
 <template>
 <div class="star" :class="starType">
-  <span v-for="itemClass in itemClasses" :class="itemClass" class="star-item" track-by="$index"></span>
+  <span v-for="(itemClass,index) in itemClasses" :key='itemClass+index' :class="itemClass" class="star-item" track-by="$index"></span>
 </div>
 </template>
 <script type="text/ecmascript-6">
-const LENGTH = 5;
-const CLS_ON = 'on';
-const CLS_HALF = 'half';
-const CLS_OFF = 'off';
+let LENGTH = 5;
+let CLS_ON = 'on';
+let CLS_HALF = 'half';
+let CLS_OFF = 'off';
 export default {
   props: {
     size: {
@@ -35,6 +35,7 @@ export default {
       while (result.length < LENGTH) {
         result.push(CLS_OFF);
       }
+      console.log(result)
       return result;
     }
   }

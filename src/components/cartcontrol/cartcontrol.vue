@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="stylus">
 .cartcontrol
   .cart-decrease
     display inine-block
