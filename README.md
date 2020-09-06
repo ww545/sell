@@ -24,3 +24,16 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### vue add style-resources-loader
+const path = require('path')
+module.exports = {
+  pluginOptions: {
+    'style-resources-loader': {
+      'preProcessor': 'stylus',
+      'patterns': [
+        path.resolve(__dirname, './src/styles/abstracts/*.styl'),
+      ]
+    }
+  }
+}
