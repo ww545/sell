@@ -1,5 +1,7 @@
 # my-project
 
+未完成的VUE实例代码
+
 ## Project setup
 ```
 yarn install
